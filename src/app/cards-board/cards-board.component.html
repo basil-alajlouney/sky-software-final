@@ -1,0 +1,27 @@
+<style>
+    i, strong {
+        color : var(--main-color);
+    }
+</style>
+<div class="mt-5 bg-gray rounded-4 p-3">
+    <div class="d-flex flex-wrap gap-3 w-100 justify-content-between pb-4 border-green-bottom">
+
+        <div class="d-flex align-items-center gap-3">
+            <i class="fa fa-list-ol fa-3x" aria-hidden="true"></i>
+            <strong>Vacation Reuqest</strong>
+        </div>
+
+        <div class="bg-white d-flex align-items-center px-3 rounded-pill border-green">
+            <i class="fa fa-search fa-xl" aria-hidden="true"></i> 
+            <input [(ngModel)]="search" (ngModelChange)="onSearchChange(search)" style="outline: 0;" class="border-0" type="text" placeholder="Search..."/>
+        </div>
+
+    </div>
+
+    <div class="d-flex flex-wrap w-full px-4 py-3 gap-3 justify-content-around">
+        <ng-content></ng-content>
+    </div>
+    <p class="text-end">
+        <a style="text-decoration: none; font-weight: 700;" class="text-green" href="/VacationRequest">View More ></a>
+    </p>
+</div>

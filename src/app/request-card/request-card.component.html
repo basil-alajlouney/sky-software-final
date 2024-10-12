@@ -1,0 +1,23 @@
+<div style="position: relative;" class="d-flex flex-column shadow py-2 px-4">
+    @if (selected) {
+        <input style="position: absolute; left:12px;top:12px" type="checkbox" [(ngModel)]="selected"/>
+    }
+    <div class="d-flex flex-column align-items-center">
+        <i alt="" class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
+        @if (pfp){
+            <!-- considering I am using an Icon as a place holder I can't apply it directly -->
+            <img [src]="pfp" [alt]="name" />
+        }
+        <strong class="text-xl-center">{{ name }}</strong>
+    </div>
+    <small class="text-gray fs-7">Submitted on:</small>
+    <p>{{ duration }}</p>
+    <small class="text-gray fs-7">Duration:</small>
+    <p>{{ submissionDate }}</p>
+    <small class="text-gray fs-7">Salary:</small>
+    <p>{{ salary }}</p>
+    <div class="d-flex justify-content-around gap-3">
+        <button class="bg-green rounded border-0 px-4 text-white">Accept</button>
+        <button class="rounded px-4 border-green text-green bg-white">Decline</button>
+    </div>
+</div>

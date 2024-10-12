@@ -1,0 +1,105 @@
+<style>
+    .card-container{
+        min-width: fit-content;
+        width:100%;
+    }
+    .profile-card{
+        width: 100%;
+        min-height: 156px;
+        height: fit-content;
+        box-shadow: 5px 4px 8px 0px lightgray;
+    }
+</style>
+
+@if (compact) {
+    <div class="card-container">
+        <div class="profile-card rounded-4 bg-gray py-2 px-4 d-flex flex-column justify-content-around w-100">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-5 mb-3">
+                <div class="d-flex gap-3 align-items-center">
+                    <i class="fa fa-user-circle fa-4x" aria-hidden="true"></i>
+                    <div>
+                        <strong>{{name}}</strong><br>
+                        <span style="color:#808080">{{title}}</span>
+                    </div>
+                </div>
+                <app-button context="View profile" btnStyle="2" />
+            </div>
+            
+            <div class="d-flex gap-5">
+                <div class="d-flex gap-3">
+                    <i class="fa fa-user fa-3x ml-5" aria-hidden="true"></i>
+                    <div>
+                        <span>Reporting to:</span><br>
+                        <span style="color:#808080">{{supervisor}}</span>
+                    </div>
+                </div>
+        
+                <div class="d-flex gap-3">
+                    <i class="fas fa-chart-line fa-3x ml-5"></i>
+                    <div>
+                        <span>Corporate level:</span><br>
+                        <span style="color:#808080">{{corporateLv}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@else {
+    <div class="card-container">
+        <div class="profile-card rounded-4 bg-gray py-2 px-4 d-flex flex-column justify-content-around w-100">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-5 mb-3">
+                <div class="d-flex gap-3 align-items-center">
+                    <i class="fa fa-user-circle fa-4x" aria-hidden="true"></i>
+                    <div>
+                        <strong>{{name}}</strong><br>
+                        <span style="color:#808080">{{title}}</span>
+                    </div>
+                </div>
+                <app-button context="New request" btnStyle="1" />
+            </div>
+            
+            <div class="d-flex flex-wrap gap-5 justify-content-around">
+                <div class="d-flex gap-3">
+                    <i class="fa fa-user fa-3x ml-5" aria-hidden="true"></i>
+                    <div>
+                        <span>Reporting to:</span><br>
+                        <span style="color:#808080">{{supervisor}}</span>
+                    </div>
+                </div>
+        
+                <div class="d-flex gap-3">
+                    <i class="fas fa-chart-line fa-3x ml-5"></i>
+                    <div>
+                        <span>Corporate level:</span><br>
+                        <span style="color:#808080">{{corporateLv}}</span>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-3">
+                    <i class="fas fa-hourglass fa-3x ml-5"></i>
+                    <div>
+                        <span>Lifetime: </span><br>
+                        <span style="color:#808080">{{lifetime}}</span>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 1024 1024"><path fill="currentColor" d="M1024 896q0 31-27 54t-71.5 37t-112 22.5t-139 11.5t-162.5 3q-110 0-200-8t-161.5-24.5t-111-45T0 880q0-42 51-87.5t139.5-83T384 654v-78q0-107-40-206q-18 19-46 58t-49 67.5t-53 53t-65 27.5q-3-14-3-29.5t1.5-36T131 479q0-65 30.5-123T243 256h-19q-69 0-118.5 53T32 448q-9-9-20.5-31.5T0 372q0-112 64.5-178T224 128q105 0 154 54q18-79 81.5-130.5T605 0q96 0 161.5 50T832 192q-73-64-192-64q-49 0-75.5 19.5T523 205q41-13 83-13q94 0 160 51t66 123q0 45-27.5 83.5T730 512q-17-85-75-133.5T513 322q10 20 21 50.5T560.5 481T576 640v1q105 6 211 48.5T958.5 789t65.5 107z"/></svg>
+                    <div>
+                        <span>Vacation Days left: </span><br>
+                        <span style="color:#808080">{{vacationDays}} Days</span>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-3">
+                    <i class="fa-solid fa-pills fa-3x"></i>
+                    <div>
+                        <span>Sick Days Left: </span><br>
+                        <span style="color:#808080">{{sickDays}} days</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

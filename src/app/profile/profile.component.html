@@ -1,0 +1,47 @@
+<main class="p-1 p-lg-5">
+  <!-- user-profile and summary cards -->
+  <app-profile-card
+    [compact]="false"
+    [pfp]="user.pfp"
+    [name]="user.name"
+    [title]="user.title"
+    [supervisor]="user.supervisor"
+    [corporateLv]="user.corporateLv"
+    [lifetime]="user.lifetime"
+    [vacationDays]="user.vacationDays"
+    [sickDays]="user.sickDays"
+  />
+
+  <app-cards-board title="Vacation Request">
+
+    @for(request of vacationRequests; track $index){
+        <div class="d-flex flex-column shadow py-2 px-4 rounded-3">
+        <strong>{{request.vacationType}}</strong>
+        
+        <div class="d-flex gap-2 align-items-center">
+            <small style="color: #808080" class="fs-7">{{request.duration}}</small>
+            <strong> 2 Days </strong>
+        </div>
+            <small style="color: #808080" class="fs-7">Approved by {{request.approvedBy}}</small>
+          </div>
+      }
+      
+
+  </app-cards-board>
+
+  <app-cards-board [(search)]="pendingRequestSearch" title="Vacation Request">
+    @for (card of cardInfo; track $index) {
+      @if (card.name.toLowerCase().includes(pendingRequestSearch.toLowerCase())){
+        <app-request-card
+        [name]="card.name"
+        [submissionDate]="card.submissionDate"
+        [duration]="card.duration"
+        [salary]="card.salary"
+        [selected]="card.selected"
+        [pfp]="undefined"
+        />
+      }
+    }
+  </app-cards-board>
+    
+</main>

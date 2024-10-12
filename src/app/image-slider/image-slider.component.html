@@ -1,0 +1,21 @@
+<section class="w-full mt-5">
+    <strong>Latest News: </strong>
+    <div class="slideshow-container mt-4 w-full">
+        @for (item of items; track $index) {
+
+            <div [class]="'fade-effect ' + (item.id == active ? '' : 'hide')">
+              <img [src]="item.url" style="width:100%">
+              <div class="text w-full min-h-fit bg-white opacity-70 slider-image-caption">{{item.caption}}</div>
+            </div>
+        }
+    
+    </div>
+
+        <br>
+        
+        <div style="text-align:center">
+            @for (item of items; track $index) {
+                <span [class]="'dot ' + (active == item.id ? 'active' : '')" (click)="changeId(item.id)"></span> 
+            }
+        </div>
+  </section>

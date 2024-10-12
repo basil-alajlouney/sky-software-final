@@ -1,0 +1,31 @@
+:root{
+    --main-color: #257d3e;
+    --base-color: #fcfcfc;
+}
+.bg-green{
+    background-color: #257d3e;
+}
+.text-green{
+    color: #257d3e;
+}
+.border-green{
+    border: #257d3e solid 1px;
+}
+.border-green-bottom{
+    border-bottom: #257d3e solid 3px !important;
+}
+.bg-white{
+    background-color: white;
+}
+.text-light{
+    color:#fcfcfc;
+}
+.bg-gray{
+    background-color: #f5f5f5;
+}
+
+@media (min-width: 992px) {
+  .p-lg-5 {
+    padding: 3rem !important;
+  }
+}

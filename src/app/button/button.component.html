@@ -1,0 +1,11 @@
+<style>
+    button{
+        border: #257d3e solid;
+    }
+</style>
+@if (btnStyle == "1"){
+    <button (click)="btnClicked($event)" class="bg-green text-white rounded-1 px-5 border-0" (click)="btnClicked($event)">{{context}}</button>
+}
+@else {
+    <button (click)="btnClicked($event)" class="bg-white text-green rounded-1 px-5 border-1" (click)="btnClicked($event)">{{context}}</button>
+}

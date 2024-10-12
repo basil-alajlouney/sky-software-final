@@ -1,0 +1,48 @@
+<main class="p-1 p-lg-5">
+  <!-- greeting page -->
+  <div class="d-flex flex-wrap justify-content-between align-items-center mx-auto">
+    <h3 style="color: #404040;">Welcome back Hazem! Here are the latest updates.</h3>
+    <app-button btnStyle="1" context="New Request" />
+  </div>
+
+  <!-- user-profile and summary cards -->
+  <div class="d-flex flex-wrap justify-content-between align-items-center gap-5 mt-5">
+    
+    <div class="flex-grow-1">
+      <app-profile-card
+        [compact]="true"
+        [pfp]="user.pfp"
+        [name]="user.name"
+        [title]="user.title"
+        [supervisor]="user.supervisor"
+        [corporateLv]="user.corporateLv"
+      />
+
+    </div>
+    
+    <div class="flex-grow-1 flex-lg-grow-0 lg-mx-5 d-flex gap-3 justify-content-around">
+      
+      <app-count-box [context]="vacationRequestBox.context" [amount]="vacationRequestBox.amount"/>
+      <app-count-box [context]="leaveRequestBox.context" [amount]="leaveRequestBox.amount"/>
+    
+    </div>
+  </div>
+
+  <app-image-slider [items]="sliderInfo" />
+
+  <app-cards-board [(search)]="VacationRequestSearch" title="Vacation Request">
+    @for (card of cardInfo; track $index) {
+      @if (card.name.toLowerCase().includes(VacationRequestSearch.toLowerCase())){
+        <app-request-card
+        [name]="card.name"
+        [submissionDate]="card.submissionDate"
+        [duration]="card.duration"
+        [salary]="card.salary"
+        [selected]="card.selected"
+        [pfp]="undefined"
+        />
+      }
+    }
+  </app-cards-board>
+    
+</main>
